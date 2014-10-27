@@ -1,7 +1,12 @@
 module Giphy
   class Gif
-    def self.build_batch_from(array)
-      array.map { |gif| new(gif) }
+    def self.build_batch_from(object)
+      case true
+      when object.is_a?(Array)
+        object.map { |gif| new(gif) }
+      when object.is_a?(Hash)
+        [ new(object) ]
+      end
     end
 
     def initialize(hash)
