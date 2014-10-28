@@ -42,6 +42,7 @@ module Giphy
 
     def random(tag='')
       result = client.random(tag)
+      puts result
       random_gif.new(result)
     end
 

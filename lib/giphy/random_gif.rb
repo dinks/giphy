@@ -1,7 +1,7 @@
 module Giphy
   class RandomGif
     def initialize(hash)
-      @hash = hash['data']
+      @hash = hash
     end
 
     def id
